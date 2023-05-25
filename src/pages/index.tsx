@@ -2,10 +2,10 @@ import { Inter } from 'next/font/google';
 import Head from 'next/head';
 import styles from '@/styles/Boards.module.css';
 import LeftNav from '../components/left-nav';
-import { useTheme } from '@mui/material/styles';
 import React from 'react';
 import IconButton from '@mui/material/IconButton';
 import VisibilityIcon from '@mui/icons-material/Visibility';
+import { title } from 'process';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -34,7 +34,7 @@ export default function Boards() {
   return (
     <>
       <Head>
-        <title>Kanban: ${user.name ? user.name + 'Boards' : 'User Boards'}</title>
+        {user.name ? (<title>Kanban: {user.name} Boards</title>) : <title>Kanban</title>}
         <meta name="description" content="Kanban for Task Management" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -44,16 +44,18 @@ export default function Boards() {
           open={open}
           handleDrawerClose={handleDrawerClose}
         />
-        <div>User's Home Page: All Kanban boards are listed.</div>
-        <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            sx={{ m: 2, ...(open && { display: 'none' }) }}
-          >
-          <VisibilityIcon />
-        </IconButton>
+        <div>
+          <p>User's Home Page: All Kanban boards are listed.</p>
+          <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              onClick={handleDrawerOpen}
+              edge="start"
+              sx={{ m: 2, ...(open && { display: 'none' }) }}
+            >
+            <VisibilityIcon />
+          </IconButton>
+        </div>
       </main>
     </>
   )

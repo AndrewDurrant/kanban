@@ -2,22 +2,26 @@ import Link from 'next/link';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-
 import styles from '@/styles/LeftNav.module.css';
+
+interface Props {
+  open: boolean;
+  handleDrawerClose: () => void
+}
 
 const drawerWidth = 200;
 
-//TODO: Need to figure out how type these props
-export default function LeftNav({ open, handleDrawerClose }) {
+export default function LeftNav({ open, handleDrawerClose }: Props) {
   return (
-    <>
+    <div className={styles.nav}>
       <Drawer
         sx={{
           width: drawerWidth,
           flexShrink: 0,
           '& .MuiDrawer-paper': {
             width: drawerWidth,
-            // boxSizing: 'border-box',
+            boxSizing: 'border-box',
+            position: 'absolute'
           },
         }}
         variant="persistent"
@@ -37,6 +41,6 @@ export default function LeftNav({ open, handleDrawerClose }) {
           <VisibilityOffIcon/>
         </IconButton>
       </Drawer>
-    </>
+    </div>
   )
 }
