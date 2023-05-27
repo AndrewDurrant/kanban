@@ -4,7 +4,7 @@ export default function Header() {
   return (
     <> 
       <div className={styles.header}>
-        <h1>Kanban</h1>
+        <h1>KANBANDY</h1>
       </div>
     </>
   );
