@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;700&display=swap');
+
+:root {
+  --font-jakarta-sans: 'Plus Jakarta Sans', sans-serif;
+  --primary-dark: #008080;
+  --primary-light: #00CCCC;
+  --black: #000112;
+  --very-dark-grey-dbg: #20212C;
+  --dark-grey: #2B2C37;
+  --lines-dbg: #3E3F4E;
+  --medium-grey: #828FA3;
+  --lines-lbg: #E4EBFA;
+  --light-grey-lbg: #F4F7FD;
+  --white: #FFFFFF;
+  --secondary-dark: #EA5555;
+  --secondary-light: #FF9898;
+}
+
+/* TODO: use this for dark/light toggle?  */
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+} */
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  color: var(--black);
+  font-family: var(--font-jakarta-sans);
+  background: var(--light-grey-lbg);
+  min-height: 100vh;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  background: var(--primary-dark);
+  padding: 1rem;
+}
+
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.boardsContainer {
+  display: grid;
+  height: 100vh;
+  background: var(--secondary-light);
+  position: relative;
+}
+
+.siteLayoutContainer {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: auto;
+}
+
+.openDrawerBtn {
+  position: fixed;
+  bottom: 5%;
+  width: 2rem;
+}
+
+.closeDrawerBtn {
+  width: 2rem;
+}

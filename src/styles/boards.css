@@ -1,0 +1,10 @@
+.boardsContainer {
+  background: var(--secondary-light);
+  position: relative;
+}
+
+.siteLayoutContainer {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: auto;
+}
